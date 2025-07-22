@@ -34,6 +34,9 @@ Can implement on the games like SubwaySurfers or TempleRun and similar games as 
 # Usage
 # Gesture           Action
 ✊ Fist              Down
+
 ☝ One               Right
+
 ✌ Two Fingers       Left
+
 🖐 Five Fingers	      Up
