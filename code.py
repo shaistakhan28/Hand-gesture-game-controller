@@ -2,6 +2,7 @@ import cv2
 import mediapipe as mp
 import pyautogui
 
+
 mp_hands = mp.solutions.hands
 hands = mp_hands.Hands(max_num_hands=1, min_detection_confidence=0.7)
 mp_draw = mp.solutions.drawing_utils
@@ -16,7 +17,7 @@ def count_raised_fingers(hand_landmarks):
     if hand_landmarks.landmark[tips_ids[0]].x < hand_landmarks.landmark[tips_ids[0] - 1].x:
         count += 1
 
- 
+   
     for i in range(1, 5):
         if hand_landmarks.landmark[tips_ids[i]].y < hand_landmarks.landmark[tips_ids[i] - 2].y:
             count += 1
@@ -39,11 +40,11 @@ while True:
             finger_count = count_raised_fingers(handLms)
 
             if finger_count == 5:
-                cv2.putText(frame, "Accelerate (5 fingers)", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
+                cv2.putText(frame, "jump (5 fingers)", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,255,0), 2)
                 pyautogui.keyDown("up")
                 
             elif finger_count == 0:
-                cv2.putText(frame, "Brake (0 fingers)", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
+                cv2.putText(frame, "Roll (0 fingers)", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 2)
                 pyautogui.keyDown("down")
                 
             elif finger_count == 1:
@@ -55,7 +56,7 @@ while True:
                 pyautogui.keyDown("right")
                 
             else:
-                
+               
                 cv2.putText(frame, "Neutral", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (200, 200, 200), 2)
                 pyautogui.keyUp("up")
                 pyautogui.keyUp("down")
