@@ -32,11 +32,11 @@ Can implement on the games like SubwaySurfers or TempleRun and similar games as 
 5)These actions control any game or app that supports keyboard input.
 
 # Usage
-# Gesture           Action
-✊ Fist              Down
+# Gesture                    Action
+✊ Fist       ------->       Down
 
-☝ One               Right
+☝ One       -------->        Right
 
-✌ Two Fingers       Left
+✌ Two Fingers  -------->      Left
 
-🖐 Five Fingers	      Up
+🖐 Five Fingers	 -------->      Up
